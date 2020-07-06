@@ -1,0 +1,28 @@
+<fop version="2.1">
+<fonts>
+    <referenced-fonts>
+      <match font-family="Italic"/>
+    </referenced-fonts>
+    <referenced-fonts>
+      <match font-family="Arial"/>
+    </referenced-fonts>
+    <referenced-fonts>
+      <match font-family="Bold"/>
+    </referenced-fonts>
+</fonts>
+<renderers>
+  <renderer mime="application/pdf">
+     <fonts>
+        <font kerning="yes" embed-url="src/main/resources/fonts/ArialItalic.ttf">
+          <font-triplet name="Italic" style="italic" weight="normal"/>
+        </font>
+        <font kerning="yes" embed-url="src/main/resources/fonts/Arial.ttf">
+          <font-triplet name="Arial" style="normal" weight="normal"/>
+        </font>
+        <font kerning="yes" embed-url="src/main/resources/fonts/ArialBold.ttf">
+          <font-triplet name="Bold" style="normal" weight="bold"/>
+        </font>
+     </fonts>
+  </renderer>
+</renderers>
+</fop>
