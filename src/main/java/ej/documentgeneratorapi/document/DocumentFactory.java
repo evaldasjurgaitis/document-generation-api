@@ -11,4 +11,5 @@ public class DocumentFactory {
 
         throw new IllegalArgumentException();
     }
+
 }

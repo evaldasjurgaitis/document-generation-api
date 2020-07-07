@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 public class InvoiceDocument implements Document {
 
-    private static final DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+    private static final DateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy");
 
     @Override
     public Object createDocument(Object data) {
@@ -31,14 +31,14 @@ public class InvoiceDocument implements Document {
         invoice.setInvoiceNo(invoiceDetails.getInvoiceNo());
         invoice.setCustomerNo(invoiceDetails.getCustomerNo());
         invoice.setVatIdNo(invoiceDetails.getVatIdNo());
-        invoice.setDate(dateFormat.format(invoiceDetails.getDate() == null ? new Date() : invoiceDetails.getDate()));
+        invoice.setDate(DATE_FORMAT.format(invoiceDetails.getDate() == null ? new Date() : invoiceDetails.getDate()));
         invoice.setCars(mapDtoToEntity(invoiceDetails.getCars()));
         return invoice;
     }
 
     private List<Car> mapDtoToEntity(List<CarDetails> carDetails) {
         return carDetails.stream()
-                .map(car -> mapDtoToEntity(car))
+                .map(this::mapDtoToEntity)
                 .collect(Collectors.toList());
     }
 
