@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class Money {
+public class NumberFormatter {
 
     private static final int DEFAULT_SCALE = 2;
 
@@ -37,6 +37,8 @@ public class Money {
     }
 
     public static String formatCurrencyByGermany(BigDecimal amount) {
+        if (amount == null) return null;
+
         NumberFormat nf = NumberFormat.getInstance(Locale.GERMANY);
         return nf.format(amount);
     }

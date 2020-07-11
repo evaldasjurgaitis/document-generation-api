@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<car>
+    <kz>KZ</kz>
+    <referenceNo>REFERENCE_NO</referenceNo>
+    <vin>VIN_NO</vin>
+    <count>1</count>
+    <monotonic>ST</monotonic>
+    <vat>0.0</vat>
+    <priceWithoutVat>10</priceWithoutVat>
+    <priceWithVat>10</priceWithVat>
+    <formattedPriceWithVat>10,00</formattedPriceWithVat>
+    <formattedPriceWithoutVat>10,00</formattedPriceWithoutVat>
+    <formattedVat>0,00</formattedVat>
+</car>

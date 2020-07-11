@@ -1,7 +1,7 @@
 package ej.documentgeneratorapi.document;
 
 public interface Document {
-    Object createDocument(Object data);
+    Object createDocumentContext(Object data);
     DocumentType getDocumentType();
 }
 

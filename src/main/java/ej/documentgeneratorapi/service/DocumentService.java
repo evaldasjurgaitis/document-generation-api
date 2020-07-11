@@ -18,7 +18,7 @@ public class DocumentService {
         Document document = documentFactory.getDocument(data);
 
         return fileService.generatePdf(
-                document.createDocument(data),
+                document.createDocumentContext(data),
                 document.getDocumentType().getTemplateName()
         );
     }

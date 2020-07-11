@@ -10,6 +10,8 @@ sourceCompatibility = '1.8'
 
 repositories {
     mavenCentral()
+    jcenter()
+    maven { url 'https://mvnrepository.com/artifact/org.pdfbox/com.springsource.org.pdfbox' }
 }
 
 dependencies {
@@ -27,6 +29,8 @@ dependencies {
     compile("net.sf.barcode4j:barcode4j-fop-ext:2.1")
     compile("org.apache.xmlgraphics:batik-all:1.11")
     compile("com.google.guava:guava:${guavaVersion}")
+    testCompile("xmlunit:xmlunit:${xmlUnitVersion}")
+    testCompile("org.pdfbox:com.springsource.org.pdfbox:${pdfBoxVersion}")
 }
 
 test {

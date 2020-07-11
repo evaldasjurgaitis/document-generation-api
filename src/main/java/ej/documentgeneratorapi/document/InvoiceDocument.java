@@ -16,7 +16,7 @@ public class InvoiceDocument implements Document {
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy");
 
     @Override
-    public Object createDocument(Object data) {
+    public Object createDocumentContext(Object data) {
         Invoice invoice = mapDtoToEntity((InvoiceDetails) data);
         return invoice;
     }

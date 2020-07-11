@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<invoice>
+    <invoiceNo>INVOICE_NO</invoiceNo>
+    <customerNo>CUSTOMER_NO</customerNo>
+    <vatIdNo>VAT_ID_NO</vatIdNo>
+    <date>07.07.2020</date>
+    <cars>
+        <kz>KZ</kz>
+        <referenceNo>REFERENCE_NO</referenceNo>
+        <vin>VIN_NO</vin>
+        <count>1</count>
+        <monotonic>ST</monotonic>
+        <vat>0.0</vat>
+        <priceWithoutVat>10</priceWithoutVat>
+        <priceWithVat>10</priceWithVat>
+        <formattedPriceWithVat>10,00</formattedPriceWithVat>
+        <formattedPriceWithoutVat>10,00</formattedPriceWithoutVat>
+        <formattedVat>0,00</formattedVat>
+    </cars>
+    <cars>
+        <kz>KZ</kz>
+        <referenceNo>REFERENCE_NO</referenceNo>
+        <vin>VIN_NO</vin>
+        <count>1</count>
+        <monotonic>ST</monotonic>
+        <vat>0.0</vat>
+        <priceWithoutVat>10</priceWithoutVat>
+        <priceWithVat>10</priceWithVat>
+        <formattedPriceWithVat>10,00</formattedPriceWithVat>
+        <formattedPriceWithoutVat>10,00</formattedPriceWithoutVat>
+        <formattedVat>0,00</formattedVat>
+    </cars>
+    <amountVat>0,00</amountVat>
+    <amountWithVat>20</amountWithVat>
+    <amountWithoutVat>20</amountWithoutVat>
+    <count>2</count>
+</invoice>

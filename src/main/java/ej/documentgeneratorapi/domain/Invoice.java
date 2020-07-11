@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static ej.documentgeneratorapi.util.Money.*;
+import static ej.documentgeneratorapi.util.NumberFormatter.*;
 
 @XmlRootElement(name = "invoice")
 @XmlAccessorType(XmlAccessType.FIELD)

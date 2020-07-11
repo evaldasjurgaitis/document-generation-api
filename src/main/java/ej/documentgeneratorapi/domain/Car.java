@@ -8,10 +8,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 
-import static ej.documentgeneratorapi.util.Money.formatCurrencyBySlovakia;
-import static ej.documentgeneratorapi.util.Money.formatDecimalWithReplace;
+import static ej.documentgeneratorapi.util.NumberFormatter.formatCurrencyBySlovakia;
+import static ej.documentgeneratorapi.util.NumberFormatter.formatDecimalWithReplace;
 
-@XmlRootElement(name = "cars")
+@XmlRootElement(name = "car")
 @XmlAccessorType(XmlAccessType.FIELD)
 @Data
 public class Car {
