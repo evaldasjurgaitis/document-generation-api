@@ -23,7 +23,7 @@ public class DocumentController {
 
     @PostMapping
     public ResponseEntity<byte[]> generateDocument(@RequestBody InvoiceDetails invoiceDetails) {
-         return new ResponseEntity<>(
+        return new ResponseEntity<>(
                 documentService.generateDocument(invoiceDetails.getDocumentType(), invoiceDetails),
                 getHttpHeaders(),
                 HttpStatus.OK

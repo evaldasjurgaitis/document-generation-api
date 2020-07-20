@@ -1,7 +1,6 @@
 package ej.documentgeneratorapi.domain;
 
 import org.custommonkey.xmlunit.XMLTestCase;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

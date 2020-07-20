@@ -1,6 +1,5 @@
 package ej.documentgeneratorapi.service;
 
-import ej.documentgeneratorapi.domain.document.DocumentFactory;
 import ej.documentgeneratorapi.dto.InvoiceDetails;
 import org.junit.Test;
 import org.junit.runner.RunWith;
