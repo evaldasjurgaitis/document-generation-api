@@ -1,7 +1,5 @@
-package ej.documentgeneratorapi.unit.dto;
+package ej.documentgeneratorapi.dto;
 
-import ej.documentgeneratorapi.dto.CarDetails;
-import ej.documentgeneratorapi.dto.InvoiceDetails;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -10,7 +8,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-import static ej.documentgeneratorapi.unit.dto.CarDetailsTest.createCarDetails;
+import static ej.documentgeneratorapi.dto.CarDetailsTest.createCarDetails;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)

@@ -1,7 +1,5 @@
-package ej.documentgeneratorapi.unit.domain;
+package ej.documentgeneratorapi.domain;
 
-import ej.documentgeneratorapi.domain.Car;
-import ej.documentgeneratorapi.domain.Invoice;
 import org.custommonkey.xmlunit.XMLTestCase;
 import org.junit.Before;
 import org.junit.Test;

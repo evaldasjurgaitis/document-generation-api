@@ -1,4 +1,4 @@
-package ej.documentgeneratorapi.integration;
+package ej.documentgeneratorapi.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ej.documentgeneratorapi.dto.InvoiceDetails;
@@ -10,7 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
-import static ej.documentgeneratorapi.unit.dto.InvoiceDetailsTest.createInvoiceDetails;
+import static ej.documentgeneratorapi.dto.InvoiceDetailsTest.createInvoiceDetails;
 import static ej.documentgeneratorapi.util.TextExtractionUtil.extractPdfText;
 import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -27,14 +27,13 @@ public class DocumentControllerTest {
     public void generateDocument_Data_InvoicePdf() throws Exception {
         InvoiceDetails invoiceDetails = createInvoiceDetails();
 
-        ResultActions resultActions = mockMvc.perform(post("/api/document/generate")
+        ResultActions resultActions = mockMvc.perform(post("/api/documents")
                 .content(asJsonString(invoiceDetails))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
         String pdfContent = extractPdfText(resultActions.andReturn()
                 .getResponse()
-                .getContentAsByteArray()
-        );
+                .getContentAsByteArray());
 
         assertTrue(pdfContent.contains(invoiceDetails.getCustomerNo()));
         assertTrue(pdfContent.contains(invoiceDetails.getVatIdNo()));

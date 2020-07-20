@@ -1,13 +1,12 @@
-package ej.documentgeneratorapi.unit.document;
+package ej.documentgeneratorapi.domain.document;
 
-import ej.documentgeneratorapi.document.InvoiceDocument;
 import ej.documentgeneratorapi.domain.Invoice;
 import ej.documentgeneratorapi.dto.InvoiceDetails;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import static ej.documentgeneratorapi.unit.dto.InvoiceDetailsTest.createInvoiceDetails;
+import static ej.documentgeneratorapi.dto.InvoiceDetailsTest.createInvoiceDetails;
 import static ej.documentgeneratorapi.util.NumberFormatter.formatCurrencyBySlovakia;
 import static ej.documentgeneratorapi.util.NumberFormatter.formatDecimalWithReplace;
 import static org.junit.Assert.*;
@@ -16,11 +15,11 @@ import static org.junit.Assert.*;
 public class InvoiceDocumentTest {
 
     @Test
-    public void createDocumentContext_Data_Invoice() {
-        InvoiceDocument invoiceDocument = new InvoiceDocument();
+    public void createDocumentContext_InvoiceDetails_Invoice() {
         InvoiceDetails invoiceDetails = createInvoiceDetails();
-
-        Invoice invoice = (Invoice) invoiceDocument.createDocumentContext(invoiceDetails);
+        DocumentFactory documentFactory = new DocumentFactory();
+        Document<Invoice> document = documentFactory.createDocument(invoiceDetails.getDocumentType(), invoiceDetails);
+        Invoice invoice = document.getDocumentContext();
 
         assertNotNull(invoice);
         assertEquals(invoice.getVatIdNo(), invoiceDetails.getVatIdNo());

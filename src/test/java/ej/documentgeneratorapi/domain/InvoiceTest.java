@@ -1,7 +1,5 @@
-package ej.documentgeneratorapi.unit.domain;
+package ej.documentgeneratorapi.domain;
 
-import ej.documentgeneratorapi.domain.Car;
-import ej.documentgeneratorapi.domain.Invoice;
 import org.custommonkey.xmlunit.XMLTestCase;
 import org.junit.Assert;
 import org.junit.Before;
@@ -18,10 +16,11 @@ import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static ej.documentgeneratorapi.unit.domain.CarTest.createCar;
+import static ej.documentgeneratorapi.domain.CarTest.createCar;
 import static org.custommonkey.xmlunit.XMLUnit.setIgnoreWhitespace;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -59,14 +58,14 @@ public class InvoiceTest extends XMLTestCase {
     @Test
     public void mapInvoiceWithoutCars_Data_Invoice() {
         Invoice invoice = createInvoiceWithoutCars();
-        Assert.assertEquals(CUSTOMER_NO, invoice.getCustomerNo());
-        Assert.assertEquals(INVOICE_NO, invoice.getInvoiceNo());
-        Assert.assertEquals(VAT_ID_NO, invoice.getVatIdNo());
-        Assert.assertEquals(DATE, invoice.getDate());
-        Assert.assertEquals("0", invoice.getCount());
-        Assert.assertEquals("0,00", invoice.getAmountVat());
-        Assert.assertEquals("0", invoice.getAmountWithoutVat());
-        Assert.assertEquals("0", invoice.getAmountWithVat());
+        assertEquals(CUSTOMER_NO, invoice.getCustomerNo());
+        assertEquals(INVOICE_NO, invoice.getInvoiceNo());
+        assertEquals(VAT_ID_NO, invoice.getVatIdNo());
+        assertEquals(DATE, invoice.getDate());
+        assertEquals("0", invoice.getCount());
+        assertEquals("0,00", invoice.getAmountVat());
+        assertEquals("0", invoice.getAmountWithoutVat());
+        assertEquals("0", invoice.getAmountWithVat());
     }
 
     @Test
@@ -97,7 +96,7 @@ public class InvoiceTest extends XMLTestCase {
         invoice.setDate(DATE);
         invoice.setInvoiceNo(INVOICE_NO);
         invoice.setVatIdNo(VAT_ID_NO);
-        invoice.setCars(null);
+        invoice.setCars(new ArrayList<>());
         return invoice;
     }
 

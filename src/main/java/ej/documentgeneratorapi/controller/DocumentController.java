@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/documents")
 public class DocumentController {
 
     private final DocumentService documentService;
@@ -21,10 +21,10 @@ public class DocumentController {
         this.documentService = documentService;
     }
 
-    @PostMapping("/document/generate")
+    @PostMapping
     public ResponseEntity<byte[]> generateDocument(@RequestBody InvoiceDetails invoiceDetails) {
-        return new ResponseEntity<>(
-                documentService.generateDocument(invoiceDetails),
+         return new ResponseEntity<>(
+                documentService.generateDocument(invoiceDetails.getDocumentType(), invoiceDetails),
                 getHttpHeaders(),
                 HttpStatus.OK
         );
@@ -33,7 +33,6 @@ public class DocumentController {
     private HttpHeaders getHttpHeaders() {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_PDF);
-
         headers.setContentDispositionFormData("document.pdf", "document");
         headers.setCacheControl("must-revalidate, post-check=0, pre-check=0");
         return headers;

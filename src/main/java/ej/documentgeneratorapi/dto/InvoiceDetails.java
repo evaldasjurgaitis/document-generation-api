@@ -1,6 +1,7 @@
 package ej.documentgeneratorapi.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import ej.documentgeneratorapi.domain.document.DocumentType;
 import lombok.Data;
 
 import java.util.Date;
@@ -19,5 +20,6 @@ public class InvoiceDetails {
     private Date date;
     @JsonProperty("cars")
     private List<CarDetails> cars;
+    private DocumentType documentType = DocumentType.INVOICE;
 
 }

@@ -1,4 +1,4 @@
-package ej.documentgeneratorapi.document;
+package ej.documentgeneratorapi.domain.document;
 
 import lombok.Getter;
 

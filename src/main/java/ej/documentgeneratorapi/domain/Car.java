@@ -27,10 +27,6 @@ public class Car {
 
     @XmlElement(name = "formattedVat")
     public String getFormattedVat() {
-        if (vat == null) {
-            return formatDecimalWithReplace(Long.valueOf(0L));
-        }
-
         return formatDecimalWithReplace(vat);
     }
 

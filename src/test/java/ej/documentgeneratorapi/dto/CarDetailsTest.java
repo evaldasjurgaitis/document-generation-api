@@ -1,6 +1,5 @@
-package ej.documentgeneratorapi.unit.dto;
+package ej.documentgeneratorapi.dto;
 
-import ej.documentgeneratorapi.dto.CarDetails;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;

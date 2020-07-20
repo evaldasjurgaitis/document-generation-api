@@ -1,7 +1,5 @@
-package ej.documentgeneratorapi.unit.util;
+package ej.documentgeneratorapi.util;
 
-import ej.documentgeneratorapi.util.NumberFormatter;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;

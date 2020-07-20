@@ -1,5 +1,6 @@
 package ej.documentgeneratorapi.service;
 
+import ej.documentgeneratorapi.domain.document.Document;
 import org.apache.fop.apps.FOUserAgent;
 import org.apache.fop.apps.Fop;
 import org.apache.fop.apps.FopFactory;
@@ -22,9 +23,9 @@ import java.io.InputStream;
 @Service
 public class FileService {
 
-    public byte[] generatePdf(Object data, String documentTemplateName) {
+    public byte[] generatePdf(Document document) {
         try (InputStream config = this.getClass().getResourceAsStream("/fop.xconf")) {
-            String xsltPath = "src/main/resources/xslt/" + documentTemplateName + ".xsl";
+            String xsltPath = "src/main/resources/xslt/" + document.getDocumentType().getTemplateName() + ".xsl";
             ByteArrayOutputStream pdfOutStream = new ByteArrayOutputStream();
 
             FopFactory fopFactory = createFopFactoryInstanceWithConfig(config);
@@ -33,7 +34,7 @@ public class FileService {
             Fop fop = fopFactory.newFop(MimeConstants.MIME_PDF, foUserAgent, pdfOutStream);
             Transformer transformer = createTransformer(xsltPath);
 
-            Source sourceData = castRequestToJaxbSource(data);
+            Source sourceData = castRequestToJaxbSource(document.getDocumentContext());
             Result resultAfterTransformation = new SAXResult(fop.getDefaultHandler());
             transformer.transform(sourceData, resultAfterTransformation);
 
