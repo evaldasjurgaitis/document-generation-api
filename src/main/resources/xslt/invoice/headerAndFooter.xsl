@@ -60,9 +60,15 @@
                         </fo:table-cell>
                         <fo:table-cell>
                             <fo:block font-size="8px">
-                                <fo:block>Realschule Augustdorf</fo:block>
-                                <fo:block>Akazienstr. 11</fo:block>
-                                <fo:block font-family="Bold" font-weight="bold">D 32832 Augustdrof</fo:block>
+                                <fo:block>
+                                    Realschule <xsl:value-of select="//invoice/city/text()"/>
+                                </fo:block>
+                                <fo:block>
+                                    <xsl:value-of select="//invoice/street/text()"/>
+                                </fo:block>
+                                <fo:block font-family="Bold" font-weight="bold">
+                                    <xsl:value-of select="//invoice/postCode/text()"/>
+                                </fo:block>
                             </fo:block>
                         </fo:table-cell>
                         <fo:table-cell>

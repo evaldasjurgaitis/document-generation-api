@@ -1,5 +1,6 @@
 package ej.documentgeneratorapi.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -17,6 +18,10 @@ import static ej.documentgeneratorapi.util.NumberFormatter.*;
 @Data
 public class Invoice {
 
+    private String company;
+    private String city;
+    private String street;
+    private String postCode;
     private String invoiceNo;
     private String customerNo;
     private String vatIdNo;

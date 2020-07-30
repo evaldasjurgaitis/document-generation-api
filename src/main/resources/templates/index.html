@@ -7,31 +7,24 @@
 <body ng-app="autoInvoiceGenerator" style="font-family: 'Arial';">
 <div ng-controller="DocumentController">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12" >
-                 <img src="images/logo.png" class="center-block img-fluid">
-            </div>
-        </div>
         <div class="main">
-            <div class="row">
-                <div class="col-sm-10" style="font-size: 11px;">
-                    <span style="text-decoration: underline">Autoverwertung Kerstingjohänner GmbH Heileforthstr. 93 33758 Schloß Holte</span>
-                </div>
-                <div class="col-sm-2"
-                     style="; font-size: 11px; text-align: center; border-bottom: 1px solid black; ">
-                    <span>PKW + LKW An - und Verkauf</span>
-                    <span>Verwertung und Entsorgung</span>
-                    <span>Reifendienst Ersatzteilhandel</span>
-                    <span>KFZ-Meisterbetrieb</span>
-                </div>
-            </div>
             <div class="row" style="margin-top:20px;">
                 <div class="col-sm-9" style="font-size: 11px; text-align: left;">
-                    <p>
-                        <span style="display: block">Realschule Augustdorf</span>
-                        <span style="display: block">Akazienstr. 11</span>
-                        <span style="display: block"><b>D 32832 Augustdrof</b></span>
-                    </p>
+                    <div class="row">
+                        <div class="col-sm-3" style="font-size: 11px; text-align: left;">
+                            <p>
+                                <span style="display: block">
+                                   <input type="text" class="editable-cell" ng-model="invoice.city" placeholder="City"/>
+                                </span>
+                                <span style="display: block">
+                                    <input type="text" class="editable-cell" ng-model="invoice.street" placeholder="Street"/>
+                                </span>
+                                <span style="display: block">
+                                    <input type="text" class="editable-cell" ng-model="invoice.postCode" placeholder="Post code"/>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-sm-3">
                     <div style="padding-top:5px;">

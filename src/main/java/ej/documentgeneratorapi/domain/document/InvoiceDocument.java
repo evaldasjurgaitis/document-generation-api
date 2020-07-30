@@ -34,6 +34,9 @@ public class InvoiceDocument implements Document<Invoice> {
 
     private Invoice mapDtoToEntity(InvoiceDetails invoiceDetails) {
         Invoice invoice = new Invoice();
+        invoice.setCity(invoiceDetails.getCity());
+        invoice.setStreet(invoiceDetails.getStreet());
+        invoice.setPostCode(invoiceDetails.getPostCode());
         invoice.setInvoiceNo(invoiceDetails.getInvoiceNo());
         invoice.setCustomerNo(invoiceDetails.getCustomerNo());
         invoice.setVatIdNo(invoiceDetails.getVatIdNo());

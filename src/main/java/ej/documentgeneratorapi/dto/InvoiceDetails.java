@@ -9,7 +9,12 @@ import java.util.List;
 
 @Data
 public class InvoiceDetails {
-
+    @JsonProperty("city")
+    private String city;
+    @JsonProperty("street")
+    private String street;
+    @JsonProperty("postCode")
+    private String postCode;
     @JsonProperty("invoiceNo")
     private String invoiceNo;
     @JsonProperty("customerNo")
